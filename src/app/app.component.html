@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Score Tracker</h1>
+
+  <p class="score">Current Score: {{ score }}</p>
+  <p class="message">{{ message }}</p>
+
+  <div class="field">
+    <label for="scoreInput">Edit Score:</label>
+    <input id="scoreInput" type="number" min="0" max="50" [(ngModel)]="score">
+  </div>
+
+  <div class="field">
+    <label for="stepInput">Step Value:</label>
+    <input id="stepInput" type="number" min="1" max="50" [(ngModel)]="stepValue">
+  </div>
+
+  <div class="buttons">
+    <button (click)="increaseScore()" [disabled]="score === maxScore">{{ increaseText }}</button>
+    <button (click)="decreaseScore()" [disabled]="score === minScore">Decrease Score</button>
+    <button (click)="resetScore()">Reset Score</button>
+  </div>
+</div>
